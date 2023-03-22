@@ -31,6 +31,6 @@ services:
     volumes:
       - ./react/frontend:/home/ubuntu/webapp
 
-    # bind exposed port of t he docker to the react (node server) port
+    # bind exposed port of the docker to the react (node server) port
     ports:
       - "2019:9000"
