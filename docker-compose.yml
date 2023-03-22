@@ -1,0 +1,36 @@
+# services that are to be connected (backend, frontend,)
+services:
+  # service 1: djang-backend
+  backend:
+    # give a name to the container
+    container_name: django-backend
+
+    # build from the dockerfile in the django dir
+    build:
+      context: ./django
+      dockerfile: Dockerfile.backend
+
+    # connect django directory to webapp dir of docker
+    volumes:
+      - ./django:/home/ubuntu/webapp
+
+    # bind exposed port of the docker the backend server port
+    ports:
+      - "1920:8000"
+
+  frontend:
+    # give a name to the container
+    container_name: react-frontend
+
+    # build from the dockerfile in the react dir
+    build:
+      context: ./react
+      dockerfile: Dockerfile.frontend
+
+    # connect frontend dir inside react to the webapp dir of docker
+    volumes:
+      - ./react/frontend:/home/ubuntu/webapp
+
+    # bind exposed port of t he docker to the react (node server) port
+    ports:
+      - "2019:9000"

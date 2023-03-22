@@ -1,0 +1,26 @@
+# base image python 3.10
+FROM python:3.10
+
+# un-buffered
+ENV PYTHONUNBUFFERED 1
+
+# create a dir inside docker
+RUN mkdir -p /home/ubuntu/webapp
+
+# change working dir to the dir we created in the last step
+WORKDIR /home/ubuntu/webapp
+
+# copy everything from the backend dir -> webapp dir in docker
+COPY . .
+
+# install requirements here
+RUN pip install --no-cache-dir -r requirements.txt
+
+# migrate everything to start new here
+RUN python ./backend/manage.py migrate
+
+# expost port 1920 of the docker container
+EXPOSE 1920
+
+# run the backend server: it will run by default on port 8000
+CMD ["python", "./backend/manage.py", "runserver", "0.0.0.0:8000"]

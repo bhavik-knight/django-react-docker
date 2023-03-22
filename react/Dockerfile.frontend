@@ -1,0 +1,21 @@
+# base image node:19
+FROM node:19
+
+# create a dir inside docker
+RUN mkdir -p /home/ubuntu/webapp
+
+# move to the newly created dir
+WORKDIR /home/ubuntu/webapp
+
+# copy package.json from frontend dir to webapp in docker
+COPY ./frontend/package.json ./
+
+# install packages that are needed for the project
+RUN npm install
+
+# expose port 2019 of docker for the frontend webapp
+EXPOSE 2019
+
+# run the server for the fronend: default on port configured in vite.config.js
+# if not configured any port: default is 5173
+CMD ["npm", "run", "dev"]
