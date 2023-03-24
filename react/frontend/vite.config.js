@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // reference: https://vitejs.dev/config/server-options.html#server-watch
+
+  // https://vitejs.dev/config/server-options.html#server-watch
   server: {
     // setting host to true is necessary to run inside docker
     host: true,

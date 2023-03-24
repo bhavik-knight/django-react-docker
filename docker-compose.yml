@@ -1,9 +1,12 @@
 # services that are to be connected (backend, frontend,)
 services:
-  # service 1: djang-backend
+  # service 1: django-backend
   backend:
     # give a name to the container
     container_name: django-backend
+
+    # give a name to the image
+    image: django-docker
 
     # build from the dockerfile in the django dir
     build:
@@ -18,9 +21,13 @@ services:
     ports:
       - "1920:8000"
 
+  # service 2: react-frontend
   frontend:
     # give a name to the container
     container_name: react-frontend
+
+    # give a name to the image
+    image: react-vite-docker
 
     # build from the dockerfile in the react dir
     build:
