@@ -10,7 +10,7 @@ idea is to connect them via API calls
 ## to make frontend working correctly do this
 - move frontend dir from react dir to somewhere else (as a backup copy)
 - make sure you have `node.js` install correctly. if not check this
-    - follow the [official documentation](https://nodejs.org/en).
+    - follow the [official documentation](https://nodejs.org/en)
     - alternatively you can use this [link](https://github.com/nodesource/distributions#rpminstall)
 - create new vite project using the commands
     - `npm create vite`
