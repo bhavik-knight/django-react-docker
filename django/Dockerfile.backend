@@ -12,7 +12,8 @@ WORKDIR /home/ubuntu/webapp
 
 # copy everything from the backend dir -> webapp dir in docker
 COPY . .
-RUN echo "ALLOWED_HOSTS=[*]" >> ./django/backend/backend/settings.py
+RUN echo "ALLOWED_HOSTS = [*]" >> ./django/backend/backend/settings.py
+
 
 # install requirements here
 RUN pip install --no-cache-dir -r requirements.txt
