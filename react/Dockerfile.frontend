@@ -17,6 +17,9 @@ COPY ./frontend/package.json .
 # install packages that are needed for the project
 RUN npm install
 
+# copy the vite.config.js file for hot-reload and for the docker with the port defined
+COPY ./frontend .
+
 # expose port 2019 of docker for the frontend webapp
 EXPOSE 2019
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { Button, ButtonGroup } from "@mui/material"
 import './App.css'
 
 function App() {
@@ -18,9 +19,11 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        count is {count}<br />
+        <ButtonGroup variant='contained'>
+          <Button onClick={() => setCount(count => count + 1)}>+</Button>
+          <Button onClick={() => setCount(count => count - 1)}>-</Button>
+        </ButtonGroup>
         <p>
           This is working great!
         </p>
