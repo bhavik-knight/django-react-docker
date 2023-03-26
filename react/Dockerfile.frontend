@@ -8,7 +8,7 @@ RUN mkdir -p /home/ubuntu/
 WORKDIR /home/ubuntu/
 
 # copy package.json from frontend dir to webapp in docker
-RUN npm create vite frontend -- --template react+swc
+RUN npm create vite frontend -- --template react
 WORKDIR /home/ubuntu/fronend
 
 # then copy the current project
