@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import { Button, ButtonGroup } from "@mui/material"
+import { Button, ButtonGroup, Typography } from "@mui/material"
 import './App.css'
 
 function App() {
@@ -19,14 +19,22 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        count is {count}<br />
+        <Typography variant='h1'>
+          Hello, World!
+        </Typography>
+        <Typography variant='body1'>
+          count is {count}<br />
+        </Typography>
         <ButtonGroup variant='contained'>
           <Button onClick={() => setCount(count => count + 1)}>+</Button>
           <Button onClick={() => setCount(count => count - 1)}>-</Button>
         </ButtonGroup>
-        <p>
-          This is working great!
-        </p>
+        <Typography variant='h5'>
+          Created by Bhavik
+          <p>
+            This is working great!
+          </p>
+        </Typography>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
