@@ -1,5 +1,5 @@
 # base image python 3.10
-FROM python:3.10
+FROM python:3.8
 
 # un-buffered
 ENV PYTHONUNBUFFERED 1
