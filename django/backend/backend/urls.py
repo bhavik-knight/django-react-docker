@@ -20,5 +20,5 @@ from todo import views
 
 
 router = routers.DefaultRouter()
-router.register("todos", views.TodoView, "todo")
+router.register(r"todos", views.TodoView, "todo")
 urlpatterns = [path("admin/", admin.site.urls), path("api/", include(router.urls))]
