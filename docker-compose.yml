@@ -36,7 +36,7 @@ services:
 
     # connect frontend dir inside react to the webapp dir of docker
     volumes:
-      - ./react/frontend:/home/ubuntu/webapp
+      - ./react/frontend:/home/ubuntu/frontend
 
     # bind exposed port of the docker to the react (node server) port
     ports:

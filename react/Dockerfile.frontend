@@ -2,13 +2,17 @@
 FROM node:19
 
 # create a dir inside docker
-RUN mkdir -p /home/ubuntu/webapp
+RUN mkdir -p /home/ubuntu/
 
 # move to the newly created dir
-WORKDIR /home/ubuntu/webapp
+WORKDIR /home/ubuntu/
 
 # copy package.json from frontend dir to webapp in docker
-COPY ./frontend/package.json ./
+RUN npm create vite frontend -- --template react+swc
+WORKDIR /home/ubuntu/fronend
+
+# then copy the current project
+COPY ./frontend/package.json .
 
 # install packages that are needed for the project
 RUN npm install
